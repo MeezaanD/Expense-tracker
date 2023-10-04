@@ -1,8 +1,8 @@
 <template>
     <div class="container-fluid">
         <div class="form-floating mx-2 mb-3">
-            <input type="text" class="form-control" id="expenseNameFilter" v-model="searchTerm" placeholder="">
-            <label for="expenseNameFilter">Search by Expense Name</label>
+            <input type="text" class="form-control transparent-input" id="expenseNameFilter" v-model="searchTerm" placeholder="">
+            <label class="transparent-label" for="expenseNameFilter">Search by Expense Name</label>
         </div>
         <div class="my-2">
             <div class="table-responsive">
@@ -150,5 +150,15 @@ export default {
 </script>
   
 <style scoped>
+.transparent-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ced4da; /* Add a bottom border for better visibility */
+    color: #fff; /* Text color */
+  }
+  
+  .transparent-label {
+    background-color: transparent;
+  }
 </style>
   

@@ -28,14 +28,14 @@
       </div>
 
       <div>
-        <div class="form-floating my-2">
+        <div class="form-floating my-2 transparent-select">
           <label for="budgetSelect" v-if="!selectedBudget">Select Budget</label>
           <select class="form-select" v-model="selectedBudget">
             <option v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{ budget.name }}</option>
           </select>
         </div>
 
-        <div class="border border-5 my-2">
+        <div class="my-2">
           <table class="table">
               <thead>
                   <tr>
