@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit Expense</h5>
+          <h5 class="modal-title text-dark">Edit Expense</h5>
           <button type="button" class="btn-close" @click="closeModal">
             <span aria-hidden="true"></span>
           </button>
@@ -13,10 +13,6 @@
             <div class="mb-3 form-floating">
               <input type="text" class="form-control" id="editExpenseName" v-model="editedExpense.name" required>
               <label for="editExpenseName">Name:</label>
-            </div>
-            <div class="mb-3 form-floating">
-              <input type="text" class="form-control" id="editExpenseDescription" v-model="editedExpense.description">
-              <label for="editExpenseDescription">Description:</label>
             </div>
             <div class="mb-3 form-floating">
               <input type="number" class="form-control" id="editExpenseAmount" v-model="editedExpense.amount" required>
@@ -76,12 +72,12 @@ export default {
     expense: Object,
     show: Boolean,
     budgets: Array,
+    originalDateTime: String,
   },
   data() {
     return {
       editedExpense: {
         name: "",
-        description: "",
         amount: null,
         budgetName: "",
         selectedPaymentMethod: "",
@@ -89,9 +85,23 @@ export default {
         otherType: "",
         category: "",
         otherCategory: "",
+        dateTime: this.originalDateTime,
       },
     };
   },
+  computed: {
+    formattedDate() {
+      if (this.editedExpense.dateTime) {
+        const date = new Date(this.editedExpense.dateTime);
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      }
+      return null;
+    },
+  },
+
   methods: {
     closeModal() {
       $("#editExpenseModal").modal("hide");
@@ -100,7 +110,6 @@ export default {
       if (this.expense) {
         this.editedExpense = {
           name: this.expense.name || "",
-          description: this.expense.description || "",
           amount: this.expense.amount || null,
           budgetName: this.expense.budgetName || "",
           selectedPaymentMethod: this.expense.selectedPaymentMethod || "",
@@ -108,10 +117,13 @@ export default {
           otherType: this.expense.otherType || "",
           category: this.expense.category || "",
           otherCategory: this.expense.otherCategory || "",
+          dateTime: this.expense.dateTime || null,
         };
         $("#editExpenseModal").modal("show");
       }
     },
+
+
 
     updateExpense() {
       this.$emit("expenseUpdated", this.editedExpense);

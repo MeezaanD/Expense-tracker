@@ -1,9 +1,11 @@
 <template>
-    <div class="container-fluid">
+    <div class="container">
         <div class="form-floating mx-2 mb-3">
-            <input type="text" class="form-control transparent-input" id="expenseNameFilter" v-model="searchTerm" placeholder="">
+            <input type="text" class="form-control transparent-input" id="expenseNameFilter" v-model="searchTerm"
+                placeholder="">
             <label class="transparent-label" for="expenseNameFilter">Search by Expense Name</label>
         </div>
+        <!-- /// -->
         <div class="my-2">
             <div class="table-responsive">
                 <table class="table">
@@ -21,14 +23,13 @@
                                 <i :class="['bi fs-1 pe-3', categoryIcons[expense.category]]"></i>
                             </td>
                             <td class="align-middle">{{ expense.name }}</td>
-                            <td class="align-middle">{{ expense.amount }}</td>
+                            <td class="align-middle">R{{ expense.amount }}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-
-        <!-- Router Link and Modals -->
+        <!-- /// -->
         <router-link v-if="showViewMoreButton" to="/expenses">
             <button class="btn btn-primary mx-2">
                 View More
@@ -153,12 +154,14 @@ export default {
 .transparent-input {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #ced4da; /* Add a bottom border for better visibility */
-    color: #fff; /* Text color */
-  }
-  
-  .transparent-label {
+    border-bottom: 1px solid #ced4da;
+    /* Add a bottom border for better visibility */
+    color: #fff;
+    /* Text color */
+}
+
+.transparent-label {
     background-color: transparent;
-  }
+}
 </style>
   

@@ -1,8 +1,5 @@
 <template>
-  <router-link class="nav-link text-center mx-auto p-2 sticky-top bg-primary" :to="{ name: 'dashboard' }">
-    <i class="bi bi-house fs-1"></i>Dashboard
-  </router-link>
-  <router-view />
+  <router-view class="p-2" />
   <Navbar class="navbar sticky-bottom" />
 </template>
 
@@ -13,3 +10,7 @@ export default ({
   components: { Navbar },
 });
 </script>
+
+<style scoped>
+
+</style>

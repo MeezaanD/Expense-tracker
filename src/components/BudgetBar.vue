@@ -1,14 +1,15 @@
 <template>
-    <div class="container-fluid">
+    <div class="container">
         <div>
             <div>
+                <h3 class="m-3 text-center">My Budget</h3>
                 <div class="progress-container">
                     <div class="progress-circle">
                         <svg class="progress-svg" width="100" height="100">
-                            <circle class="progress-bg" cx="50" cy="50" r="45" stroke="#007bff" stroke-width="10"
+                            <circle class="progress-bg" cx="50" cy="50" r="45" stroke="#eee" stroke-width="10"
                                 fill="transparent"></circle>
                             <circle class="progress-bar" cx="50" cy="50" r="45" :stroke-dasharray="circumference"
-                                :stroke-dashoffset="progressOffset" stroke="#eee" stroke-width="10" fill="transparent">
+                                :stroke-dashoffset="progressOffset" stroke="#dc3545" stroke-width="10" fill="transparent">
                             </circle>
                         </svg>
                     </div>
@@ -21,20 +22,16 @@
                     <p class="text-center" v-else>Available Budget: R<span>{{ availableBudget }} / {{ totalBudget }}</span>
                     </p>
                 </div>
-                <!-- <div class="d-flex justify-content-center my-3 gap-3">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#openBudget">
-                        <i class="bi bi-plus-circle"></i> 
-                        Create Budget
-                    </button>
-                </div> -->
             </div>
+            <!-- /// -->
             <div>
                 <div class="form-floating my-2 transparent-select">
                     <label for="budgetSelect" v-if="!selectedBudget">Select Budget</label>
-                    <select class="form-select" v-model="selectedBudget">
-                      <option v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{ budget.name }}</option>
+                    <select class="form-select text-bg-transparent text-light" v-model="selectedBudget">
+                        <option class="text-bg-dark text-light" v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{
+                            budget.name }}</option>
                     </select>
-                  </div>
+                </div>
             </div>
         </div>
         <AddBudget @budgetAdded="addBudget" />
@@ -127,7 +124,5 @@ export default {
 };
 </script>
   
-<style scoped>
-
-</style>
+<style scoped></style>
   

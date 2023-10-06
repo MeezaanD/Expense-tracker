@@ -1,14 +1,15 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
     <div>
       <div>
+        <h2 class="text-center my-2">My Budget</h2>
         <div class="progress-container">
           <div class="progress-circle">
             <svg class="progress-svg" width="100" height="100">
               <circle class="progress-bg" cx="50" cy="50" r="45" stroke="#eee" stroke-width="10" fill="transparent">
               </circle>
               <circle class="progress-bar" cx="50" cy="50" r="45" :stroke-dasharray="circumference"
-                :stroke-dashoffset="progressOffset" stroke="#007bff" stroke-width="10" fill="transparent"></circle>
+                :stroke-dashoffset="progressOffset" stroke="#dc3545" stroke-width="10" fill="transparent"></circle>
             </svg>
           </div>
           <div class="progress-label">
@@ -30,8 +31,8 @@
       <div>
         <div class="form-floating my-2 transparent-select">
           <label for="budgetSelect" v-if="!selectedBudget">Select Budget</label>
-          <select class="form-select" v-model="selectedBudget">
-            <option v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{ budget.name }}</option>
+          <select class="form-select text-bg-transparent text-light" v-model="selectedBudget">
+            <option class="text-bg-dark text-light" v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{ budget.name }}</option>
           </select>
         </div>
 
@@ -64,13 +65,12 @@
       </div>
       </div>
     </div>
-
     <div>
       <div v-if="selectedBudget">
         <div class="d-flex justify-content-between pe-1 my-2">
           <h2>Expenses for {{ selectedBudget }}</h2>
           <button class="btn btn-primary rounded-pill" @click="openAddExpenseModal">
-            <i class="bi bi-plus-circle"></i>
+            <i class="bi bi-plus-circle fs-5"></i>
           </button>
         </div>
         <div>
@@ -79,7 +79,7 @@
               <tr>
                 <th scope="col">Expense</th>
                 <th scope="col">Amount</th>
-                <th scope="col">Actions</th>
+                <th scope="col" class="text-center">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -87,7 +87,7 @@
                 <td>{{ expense.name }}</td>
                 <td>R{{ expense.amount }}</td>
                 <td>
-                  <div class="d-flex gap-1">
+                  <div class="d-flex justify-content-center gap-1">
                     <button class="btn rounded-pill btn-secondary" @click="editExpense(index)">
                       <i class="bi bi-pencil-square"></i>
                     </button>

@@ -3,7 +3,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add Expense</h5>
+                    <h5 class="modal-title text-dark">Add Expense</h5>
                     <button type="button" class="btn-close" @click="closeModal">
                         <span aria-hidden="true"></span>
                     </button>
@@ -18,13 +18,8 @@
                             <label for="budgetSelect">Select Budget:</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <input type="text" class="form-control" id="expenseName" v-model="newExpense.name" required>
+                            <input type="text" class="form-control" id="expenseName" v-model="newExpense.name" placeholder="" required>
                             <label for="expenseName">Name:</label>
-                        </div>
-                        <div class="mb-3 form-floating">
-                            <input type="text" class="form-control" id="expenseDescription"
-                                v-model="newExpense.description">
-                            <label for="expenseDescription">Description:</label>
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="number" class="form-control" id="expenseAmount" v-model="newExpense.amount"
@@ -88,14 +83,13 @@ data() {
     return {
         newExpense: {
             name: "",
-            description: "",
             amount: null,
             selectedPaymentMethod: "",
             budgetName: this.selectedBudget,
             category: "",
             otherCategory: "",
             // Initialize a property for date and time
-            dateTime: null,
+            dateTime: new Date,
         },
     };
 },
@@ -115,17 +109,16 @@ methods: {
             return;
         }
         // Set the date and time property to the current date and time
-        this.newExpense.dateTime = new Date().toLocaleString();
+        this.newExpense.dateTime = new Date();
         this.$emit("expenseAdded", this.newExpense);
         this.newExpense = {
             name: "",
-            description: "",
             amount: null,
             budgetName: this.selectedBudget,
             selectedPaymentMethod: "",
             category: "",
             otherCategory: "",
-            dateTime: null, // Reset the dateTime property
+            dateTime: new Date, // Reset the dateTime property
         };
         this.closeModal();
     },

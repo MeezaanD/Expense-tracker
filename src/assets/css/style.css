@@ -1,12 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+#app {
+  /* background: #000000; */
+  /* background: #444444; */
+  padding: 0;
+  color: #ffff !important;
+  background: #0575E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #021B79, #0575E6);
+  background: linear-gradient(to top, #021B79, #0575E6); 
+  /* color: #000000 !important; */
 }
 
 li {
@@ -14,72 +25,172 @@ li {
   padding: 0;
 }
 
+.nav {
+  display: flex;
+  justify-content: center;
+  background: #0575E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #021B79, #0575E6);
+  background: linear-gradient(to top, #021B79, #0575E6); 
+  /* background: transparent !important; */
+  /* background:#ffff !important; */
+  /* box-shadow:
+    inset 20px 20px 60px #bebebe,
+    inset -20px -20px 60px #ffffff; */
+  width: 100%;
+}
+
+.nav-link {
+  /* color: #000000; */
+  color: #ffff !important;
+}
+
+.nav-link:hover {
+  /* color: #000000; */
+  color: #ffff !important;
+}
+
+.btn-expenses {
+  background: #4985c5 !important;
+  color: beige !important;
+}
+
+.custom-btn {
+  border-radius: 50%;
+  top: -25px; 
+  left: 50%; 
+  transform: translateX(-50%);
+  /* box-shadow:
+    inset 20px 20px 60px #bebebe,
+    inset -20px -20px 60px #ffffff; */
+}
+
+.modal-header,.modal-body, .modal-footer {
+  background: #4985c5 !important;
+  color: beige !important;
+}
+
+.test {
+  /* background: #4985c5 !important; */
+  color: red !important;
+  box-shadow: none !important;
+}
+
 .nav-item:hover {
   cursor: pointer;
 }
 
-.card {
-    border-radius: 50px;
-    box-shadow: inset 20px 20px 60px #bdbdbd,
-      inset -20px -20px 60px #ffffff;
-      border: none !important;
-}
-
-.card-text {
-    font-weight: 700;
+.form-control:focus {
+  background-color: transparent !important; /* Set the background color to transparent */
+  box-shadow: none !important; /* Remove any box shadow */
 }
 
 .transparent-select select {
-    background-color: transparent;
-    border: 1px solid white;
-    border-bottom: 1px solid #ced4da; 
-  }
-  
-  .transparent-select label {
-    background-color: transparent;
-  }
+  background-color: transparent;
+}
 
+.transparent-select label {
+  background-color: transparent;
+}
 
 .progress-container {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-  }
-  
-  .progress-circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-  }
-  
-  .progress-svg {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .progress-bg {
-    fill: none;
-  }
-  
-  .progress-bar {
-    fill: none;
-    stroke-linecap: round;
-    transition: stroke-dashoffset 0.3s ease-out;
-    transform-origin: center;
-    /* Set the transformation origin to the center of the circle */
-    transform: rotate(-90deg);
-    /* Rotate the circle by -90 degrees to start at the top */
-  }
-  
-  .progress-label {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    font-weight: bold;
-  }
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
 
-  
+.progress-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.progress-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.progress-bg {
+  fill: none;
+}
+
+.progress-bar {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease-out;
+  transform-origin: center;
+  /* Set the transformation origin to the center of the circle */
+  transform: rotate(-90deg);
+  /* Rotate the circle by -90 degrees to start at the top */
+}
+
+.progress-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+th,
+td {
+  background-color: transparent !important;
+  color: #ffff !important;
+  /* color: #000000 !important; */
+}
+
+.card {
+  border-radius: 10px 10px 0 0 !important;
+  background: #4985c5 !important;
+  box-shadow: inset 41px 41px 82px #356190,
+              inset -41px -41px 82px #5da9fa !important;
+  height: 100%;
+  /* color: #ffff !important; */
+  color: beige !important;
+  /* color: #000000 !important; */
+  -webkit-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+  -moz-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+  box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(90, 90, 90, 0.35) !important;
+}
+
+/* .btn {
+  color: #ffff !important;
+  color: #000000 !important;
+} */
+
+input {
+  /* background-color: #000000 !important; */
+  background-color: transparent !important;
+  /* color: #ffff !important; */
+}
+
+label {
+  background-color: transparent !important;
+}
+
+.expense-name {
+  font-weight: 700;
+  color: beige !important;
+  /* color: #ffff !important; */
+  /* color: #000000 !important; */
+}
+
+.payment-method {
+  font-weight: 500;
+  /* color: beige !important; */
+  /* color: #ffff !important; */
+  /* color: #000000 !important; */
+}
+
+.time-text {
+  font-weight: 300;
+  /* color: beige !important; */
+  /* color: #ffff !important; */
+  /* color: #000000 !important; */
+}

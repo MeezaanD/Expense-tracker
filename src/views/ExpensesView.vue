@@ -1,8 +1,5 @@
 <template>
-    <body>
-        <h3 class="m-3">Recent Transactions</h3>
         <Expense class="list" />
-    </body>
 </template>
   
 <script>
@@ -21,10 +18,7 @@ h3 {
 }
 
 .list {
-    min-height: 80vh;
+    min-height: 85vh;
 }
 
-body {
-    background-image: linear-gradient(#007bff, #FFFDE4) !important;
-}
 </style>
