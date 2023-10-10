@@ -23,7 +23,7 @@
                 <option value="">Select Payment Method</option>
                 <option value="Card">Card</option>
                 <option value="Cash">Cash</option>
-                <option value="Withdrawal">Withdrawal</option>
+                <!-- <option value="Withdrawal">Withdrawal</option> -->
               </select>
               <label for="editPaymentMethod">Payment Method:</label>
             </div>

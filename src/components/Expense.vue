@@ -2,21 +2,21 @@
     <div class="container">
         <div class="d-flex justify-content-between gap-2 mx-1 my-3">
             <button class="btn rounded-pill" @click="toggleEditColumn">
-                <i class="bi bi-pencil-square fs-1 text-light"></i>
+                <i class="bi bi-pencil-square fs-1 text-black"></i>
             </button>
             <div class="d-flex gap-2">
                 <button class="btn rounded-pill" @click="openAddExpenseModal">
-                    <i class="bi bi-plus-circle fs-1 text-light"></i>
+                    <i class="bi bi-plus-circle fs-1 text-black"></i>
                 </button>
                 <button class="btn rounded-pill" @click="toggleDeleteColumn">
-                    <i class="bi bi-trash fs-1 text-light"></i>
+                    <i class="bi bi-trash fs-1 text-black"></i>
                 </button>
             </div>
         </div>
         <!-- /// -->
         <div class="d-flex justify-content-center">
             <div class="form-floating">
-                <input type="text" class="form-control transparent-input rounded-1 text-light" id="expenseNameFilter"
+                <input type="text" class="form-control transparent-input rounded-1 text-black" id="expenseNameFilter"
                     v-model="searchTerm" placeholder="" />
                 <label class="transparent-label" for="expenseNameFilter">
                     <i class="bi bi-search"></i> Search
@@ -24,7 +24,7 @@
             </div>
             <button class="btn rounded-pill" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
                 aria-controls="offcanvasScrolling">
-                <i class="bi bi-filter-circle fs-1 text-light"></i>
+                <i class="bi bi-filter-circle fs-1 text-black"></i>
             </button>
         </div>
         <!-- /// -->
@@ -78,7 +78,7 @@
                                 <option value="">All Payment Methods</option>
                                 <option value="Card">Card</option>
                                 <option value="Cash">Cash</option>
-                                <option value="Withdrawal">Withdrawal</option>
+                                <!-- <option value="Withdrawal">Withdrawal</option> -->
                             </select>
                         </li>
                     </ul>
@@ -94,8 +94,8 @@
             <div class="card-body py-3" v-for="(expense, index) in filteredExpenses" :key="index">
                 <div class="row d-flex justify-content-center">
                     <div :class="['col', showEditColumn || showDeleteColumn ? '' : 'col']">
-                        <button class="btn rounded-5" @click="editExpense(index)" v-if="showEditColumn">
-                            <i class="bi bi-pencil-square fs-5"></i>
+                        <button class="btn btn-success rounded-5" @click="editExpense(index)" v-if="showEditColumn">
+                            <i class="bi bi-pencil-square"></i>
                         </button>
                     </div>
                     <div :class="['col-5 py-0 px-0', showEditColumn || showDeleteColumn ? 'col' : 'col']">
@@ -111,8 +111,8 @@
                         <p class="card-text">R{{ expense.amount }}</p>
                     </div>
                     <div :class="['col', showEditColumn || showDeleteColumn ? 'col' : 'col']">
-                        <button class="btn rounded-5" @click="deleteExpense(index)" v-if="showDeleteColumn">
-                            <i class="bi bi-dash-circle fs-5"></i>
+                        <button class="btn btn-danger rounded-5" @click="deleteExpense(index)" v-if="showDeleteColumn">
+                            <i class="bi bi-dash-circle"></i>
                         </button>
                     </div>
                 </div>

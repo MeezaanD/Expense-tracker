@@ -17,7 +17,7 @@
               </div>
   
               <div v-if="useCustomName === 'true'" class="form-floating mb-3">
-                <input type="text" class="form-control" id="customBudgetName" v-model="customBudgetName" placeholder="">
+                <input type="text" class="form-control" id="customBudgetName" v-model="customBudgetName">
                 <label for="customBudgetName">Custom Budget Name</label>
               </div>
   
@@ -30,7 +30,7 @@
               </div>
   
               <div class="form-floating">
-                <input type="number" class="form-control" id="budgetAmount" v-model="budgetAmount" placeholder="">
+                <input type="number" class="form-control" id="budgetAmount" v-model="budgetAmount">
                 <label for="budgetAmount">Amount</label>
               </div>
             </div>

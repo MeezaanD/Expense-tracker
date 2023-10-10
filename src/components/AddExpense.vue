@@ -18,7 +18,7 @@
                             <label for="budgetSelect">Select Budget:</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <input type="text" class="form-control" id="expenseName" v-model="newExpense.name" placeholder="" required>
+                            <input type="text" class="form-control" id="expenseName" v-model="newExpense.name" required>
                             <label for="expenseName">Name:</label>
                         </div>
                         <div class="mb-3 form-floating">
@@ -57,7 +57,7 @@
                                 <option value="">Select Payment Method</option>
                                 <option value="Card">Card</option>
                                 <option value="Cash">Cash</option>
-                                <option value="Withdrawal">Withdrawal</option>
+                                <!-- <option value="Withdrawal">Withdrawal</option> -->
                             </select>
                             <label for="paymentMethod">Payment Method:</label>
                         </div>

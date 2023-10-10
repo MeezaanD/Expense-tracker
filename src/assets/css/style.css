@@ -13,10 +13,10 @@
   /* background: #000000; */
   /* background: #444444; */
   padding: 0;
-  color: #ffff !important;
-  background: #0575E6;  /* fallback for old browsers */
+  color: #000000 !important;
+  /* background: #0575E6;
   background: -webkit-linear-gradient(to top, #021B79, #0575E6);
-  background: linear-gradient(to top, #021B79, #0575E6); 
+  background: linear-gradient(to top, #021B79, #0575E6);  */
   /* color: #000000 !important; */
 }
 
@@ -27,31 +27,20 @@ li {
 
 .nav {
   display: flex;
-  justify-content: center;
-  background: #0575E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #021B79, #0575E6);
-  background: linear-gradient(to top, #021B79, #0575E6); 
-  /* background: transparent !important; */
-  /* background:#ffff !important; */
-  /* box-shadow:
-    inset 20px 20px 60px #bebebe,
-    inset -20px -20px 60px #ffffff; */
+  -webkit-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+  -moz-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+  box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
   width: 100%;
 }
 
 .nav-link {
-  /* color: #000000; */
-  color: #ffff !important;
+  color: #000000 !important;
+  /* color: #ffff !important; */
 }
 
 .nav-link:hover {
-  /* color: #000000; */
-  color: #ffff !important;
-}
-
-.btn-expenses {
-  background: #4985c5 !important;
-  color: beige !important;
+  color: #000000 !important;
+  /* color: #ffff !important; */
 }
 
 .custom-btn {
@@ -62,17 +51,6 @@ li {
   /* box-shadow:
     inset 20px 20px 60px #bebebe,
     inset -20px -20px 60px #ffffff; */
-}
-
-.modal-header,.modal-body, .modal-footer {
-  background: #4985c5 !important;
-  color: beige !important;
-}
-
-.test {
-  /* background: #4985c5 !important; */
-  color: red !important;
-  box-shadow: none !important;
 }
 
 .nav-item:hover {
@@ -137,19 +115,13 @@ li {
 th,
 td {
   background-color: transparent !important;
-  color: #ffff !important;
-  /* color: #000000 !important; */
+  /* color: #ffff !important; */
+  color: #000000 !important;
 }
 
 .card {
   border-radius: 10px 10px 0 0 !important;
-  background: #4985c5 !important;
-  box-shadow: inset 41px 41px 82px #356190,
-              inset -41px -41px 82px #5da9fa !important;
   height: 100%;
-  /* color: #ffff !important; */
-  color: beige !important;
-  /* color: #000000 !important; */
   -webkit-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
   -moz-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
   box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
@@ -159,15 +131,8 @@ td {
   border-bottom: 1px solid rgba(90, 90, 90, 0.35) !important;
 }
 
-/* .btn {
-  color: #ffff !important;
-  color: #000000 !important;
-} */
-
 input {
-  /* background-color: #000000 !important; */
   background-color: transparent !important;
-  /* color: #ffff !important; */
 }
 
 label {
@@ -176,21 +141,12 @@ label {
 
 .expense-name {
   font-weight: 700;
-  color: beige !important;
-  /* color: #ffff !important; */
-  /* color: #000000 !important; */
 }
 
 .payment-method {
   font-weight: 500;
-  /* color: beige !important; */
-  /* color: #ffff !important; */
-  /* color: #000000 !important; */
 }
 
 .time-text {
   font-weight: 300;
-  /* color: beige !important; */
-  /* color: #ffff !important; */
-  /* color: #000000 !important; */
 }

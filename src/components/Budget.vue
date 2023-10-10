@@ -31,8 +31,8 @@
       <div>
         <div class="form-floating my-2 transparent-select">
           <label for="budgetSelect" v-if="!selectedBudget">Select Budget</label>
-          <select class="form-select text-bg-transparent text-light" v-model="selectedBudget">
-            <option class="text-bg-dark text-light" v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{ budget.name }}</option>
+          <select class="form-select" v-model="selectedBudget">
+            <option class="text-black" v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{ budget.name }}</option>
           </select>
         </div>
 

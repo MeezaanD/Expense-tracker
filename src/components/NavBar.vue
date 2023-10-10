@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center p-0">
     <div id="animatedButtons" class="collapse">
       <div class="d-flex justify-content-center gap-3 my-5">
         <button class="btn rounded-pill p-2 btn-primary" @click="openAddExpenseModal">
