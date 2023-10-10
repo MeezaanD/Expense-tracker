@@ -3,150 +3,152 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
 
 #app {
-  /* background: #000000; */
-  /* background: #444444; */
-  padding: 0;
-  color: #000000 !important;
-  /* background: #0575E6;
+	/* background: #000000; */
+	/* background: #444444; */
+	padding: 0;
+	color: #000000 !important;
+	/* background: #0575E6;
   background: -webkit-linear-gradient(to top, #021B79, #0575E6);
   background: linear-gradient(to top, #021B79, #0575E6);  */
-  /* color: #000000 !important; */
+	/* color: #000000 !important; */
 }
 
 li {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 .nav {
-  display: flex;
-  -webkit-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
-  -moz-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
-  box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
-  width: 100%;
+	display: flex;
+	-webkit-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+	-moz-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+	box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+	width: 100%;
 }
 
 .nav-link {
-  color: #000000 !important;
-  /* color: #ffff !important; */
+	color: #000000 !important;
+	/* color: #ffff !important; */
 }
 
 .nav-link:hover {
-  color: #000000 !important;
-  /* color: #ffff !important; */
+	color: #000000 !important;
+	/* color: #ffff !important; */
 }
 
 .custom-btn {
-  border-radius: 50%;
-  top: -25px; 
-  left: 50%; 
-  transform: translateX(-50%);
-  /* box-shadow:
+	border-radius: 50%;
+	top: -25px;
+	left: 50%;
+	transform: translateX(-50%);
+	/* box-shadow:
     inset 20px 20px 60px #bebebe,
     inset -20px -20px 60px #ffffff; */
 }
 
 .nav-item:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .form-control:focus {
-  background-color: transparent !important; /* Set the background color to transparent */
-  box-shadow: none !important; /* Remove any box shadow */
+	background-color: transparent !important;
+	/* Set the background color to transparent */
+	box-shadow: none !important;
+	/* Remove any box shadow */
 }
 
 .transparent-select select {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 .transparent-select label {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 .progress-container {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
 }
 
 .progress-circle {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	position: absolute;
 }
 
 .progress-svg {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .progress-bg {
-  fill: none;
+	fill: none;
 }
 
 .progress-bar {
-  fill: none;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.3s ease-out;
-  transform-origin: center;
-  /* Set the transformation origin to the center of the circle */
-  transform: rotate(-90deg);
-  /* Rotate the circle by -90 degrees to start at the top */
+	fill: none;
+	stroke-linecap: round;
+	transition: stroke-dashoffset 0.3s ease-out;
+	transform-origin: center;
+	/* Set the transformation origin to the center of the circle */
+	transform: rotate(-90deg);
+	/* Rotate the circle by -90 degrees to start at the top */
 }
 
 .progress-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-weight: bold;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	font-weight: bold;
 }
 
 th,
 td {
-  background-color: transparent !important;
-  /* color: #ffff !important; */
-  color: #000000 !important;
+	background-color: transparent !important;
+	/* color: #ffff !important; */
+	color: #000000 !important;
 }
 
 .card {
-  border-radius: 10px 10px 0 0 !important;
-  height: 100%;
-  -webkit-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
-  -moz-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
-  box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+	border-radius: 10px 10px 0 0 !important;
+	height: 100%;
+	-webkit-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+	-moz-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
+	box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
 }
 
 .card-header {
-  border-bottom: 1px solid rgba(90, 90, 90, 0.35) !important;
+	border-bottom: 1px solid rgba(90, 90, 90, 0.35) !important;
 }
 
 input {
-  background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 label {
-  background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 .expense-name {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .payment-method {
-  font-weight: 500;
+	font-weight: 500;
 }
 
 .time-text {
-  font-weight: 300;
+	font-weight: 300;
 }

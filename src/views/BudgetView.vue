@@ -1,17 +1,17 @@
 <template>
-    <Budget class="budget"/>
+	<Budget class="budget" />
 </template>
 
 <script>
 import Budget from "@/components/Budget.vue";
 
 export default ({
-  components: { Budget},
+	components: { Budget },
 });
 </script>
 
 <style scoped>
 .budget {
-  min-height: 85vh;
+	min-height: 85vh;
 }
 </style>
