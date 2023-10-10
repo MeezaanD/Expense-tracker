@@ -9,7 +9,6 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-floating mb-3">
-							<label for="selectedBudget">Select Budget to Increase</label>
 							<select class="form-select" id="selectedBudget" v-model="selectedBudget">
 								<option value="" disabled>Select a Budget</option>
 								<option v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{ budget.name
@@ -34,11 +33,11 @@
 <script>
 export default {
 	props: {
-		budgets: Array, // Receive budgets as a prop from the parent component
+		budgets: Array, 
 	},
 	data() {
 		return {
-			selectedBudget: '', // Initialize selectedBudget
+			selectedBudget: '',
 			increaseAmount: '',
 		};
 	},
@@ -49,8 +48,8 @@ export default {
 					selectedBudget: this.selectedBudget,
 					increaseAmount: parseFloat(this.increaseAmount),
 				});
-				this.selectedBudget = ''; // Reset selectedBudget
-				this.increaseAmount = ''; // Reset increaseAmount
+				this.selectedBudget = ''; 
+				this.increaseAmount = ''; 
 				$("#increaseBudget").modal("hide");
 			}
 		}

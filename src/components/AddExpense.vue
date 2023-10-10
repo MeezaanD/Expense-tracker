@@ -89,7 +89,6 @@ export default {
 				budgetName: this.selectedBudget,
 				category: "",
 				otherCategory: "",
-				// Initialize a property for date and time
 				dateTime: new Date,
 			},
 		};
@@ -109,7 +108,6 @@ export default {
 				alert("Expense would exceed the budget amount!");
 				return;
 			}
-			// Set the date and time property to the current date and time
 			this.newExpense.dateTime = new Date();
 			this.$emit("expenseAdded", this.newExpense);
 			this.newExpense = {
@@ -119,7 +117,7 @@ export default {
 				selectedPaymentMethod: "",
 				category: "",
 				otherCategory: "",
-				dateTime: new Date, // Reset the dateTime property
+				dateTime: new Date, 
 			};
 			this.closeModal();
 		},

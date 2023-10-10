@@ -84,7 +84,6 @@ export default {
 			return budget.amount - totalExpenses;
 		},
 		filteredExpenses() {
-			// Filter expenses based on the selected budget
 			return this.expenses.filter((expense) => expense.budgetName === this.selectedBudget);
 		},
 	},
@@ -98,10 +97,7 @@ export default {
 		},
 		deleteBudget(index) {
 			if (confirm("Are you sure you want to delete this budget?")) {
-				// Remove the budget from the budgets array
 				const deletedBudget = this.budgets.splice(index, 1)[0];
-
-				// Remove all expenses associated with the deleted budget
 				this.expenses = this.expenses.filter((expense) => expense.budgetName !== deletedBudget.name);
 
 				this.saveDataToLocalStorage();

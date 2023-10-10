@@ -17,7 +17,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<!-- Limit the number of displayed expenses to 4 -->
 						<tr class="border-bottom" v-for="(expense, index) in displayedExpenses" :key="index">
 							<td class="align-middle text-center">
 								<i :class="['bi fs-1 pe-3', categoryIcons[expense.category]]"></i>
@@ -72,11 +71,9 @@ export default {
 		};
 	},
 	computed: {
-		// Limit the number of displayed expenses to 4
 		displayedExpenses() {
 			return this.sortedExpenses.slice(0, 5);
 		},
-		// Check if there are more than 4 expenses
 		showViewMoreButton() {
 			return this.sortedExpenses.length > 5;
 		},
@@ -155,9 +152,7 @@ export default {
 	background-color: transparent;
 	border: none;
 	border-bottom: 1px solid #ced4da;
-	/* Add a bottom border for better visibility */
 	color: #fff;
-	/* Text color */
 }
 
 .transparent-label {
