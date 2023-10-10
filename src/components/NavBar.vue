@@ -1,5 +1,5 @@
 <template>
-	<div class="d-flex justify-content-center p-0">
+	<div class="nav-container d-flex justify-content-center p-0">
 		<div id="animatedButtons" class="collapse">
 			<div class="d-flex justify-content-center gap-3 my-5">
 				<button class="btn rounded-pill p-2 btn-primary" @click="openAddExpenseModal">
@@ -14,23 +14,23 @@
 		<ul class="nav nav-fill d-flex justify-content-between text-center gap-5 p-4 position-relative">
 			<button class="btn btn-primary rounded-5 custom-btn position-absolute" data-bs-toggle="collapse"
 				data-bs-target="#animatedButtons">
-				<i class="bi bi-plus-circle fs-2"></i>
+				<i class="bi bi-plus-circle fs-5"></i>
 			</button>
 			<li class="nav-item">
 				<router-link class="nav-link" :to="{ name: 'expenses' }">
-					<i class="bi bi-bag fs-2"></i>
+					<i class="bi bi-bag fs-1"></i>
 				</router-link>
 				Expense
 			</li>
 			<li class="nav-item">
 				<router-link class="nav-link" :to="{ name: 'dashboard' }">
-					<i class="bi bi-house fs-2"></i>
+					<i class="bi bi-house fs-1"></i>
 				</router-link>
 				Dashboard
 			</li>
 			<li class="nav-item">
 				<router-link class="nav-link" :to="{ name: 'budget' }">
-					<i class="bi bi-coin fs-2"></i>
+					<i class="bi bi-coin fs-1"></i>
 				</router-link>
 				Budget
 			</li>

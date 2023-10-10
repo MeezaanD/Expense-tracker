@@ -2,21 +2,21 @@
 	<div class="container">
 		<div class="d-flex justify-content-between gap-2 mx-1 my-3">
 			<button class="btn rounded-pill" @click="toggleEditColumn">
-				<i class="bi bi-pencil-square fs-1 text-black"></i>
+				<i class="bi bi-pencil-square fs-1 text-light"></i>
 			</button>
 			<div class="d-flex gap-2">
 				<button class="btn rounded-pill" @click="openAddExpenseModal">
-					<i class="bi bi-plus-circle fs-1 text-black"></i>
+					<i class="bi bi-plus-circle fs-1 text-light"></i>
 				</button>
 				<button class="btn rounded-pill" @click="toggleDeleteColumn">
-					<i class="bi bi-trash fs-1 text-black"></i>
+					<i class="bi bi-trash fs-1 text-light"></i>
 				</button>
 			</div>
 		</div>
 		<!-- /// -->
 		<div class="d-flex justify-content-center">
-			<div class="form-floating">
-				<input type="text" class="form-control transparent-input rounded-1 text-black" id="expenseNameFilter"
+			<div class="form-floating px-1">
+				<input type="text" class="form-control transparent-input rounded-1 text-light" id="expenseNameFilter"
 					v-model="searchTerm" placeholder="" />
 				<label class="transparent-label" for="expenseNameFilter">
 					<i class="bi bi-search"></i> Search
@@ -24,7 +24,7 @@
 			</div>
 			<button class="btn rounded-pill" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
 				aria-controls="offcanvasScrolling">
-				<i class="bi bi-filter-circle fs-1 text-black"></i>
+				<i class="bi bi-filter-circle fs-1 text-light"></i>
 			</button>
 		</div>
 		<!-- /// -->
@@ -38,11 +38,6 @@
 			</div>
 			<div class="offcanvas-body">
 				<div>
-					<div class="form-floating my-2">
-						<input type="text" class="form-control transparent-input" id="expenseNameFilter"
-							v-model="searchTerm" placeholder="" />
-						<label class="transparent-label" for="expenseNameFilter">Search by Expense Name</label>
-					</div>
 					<ul class="list-group">
 						<li class="list-group-item">
 							<label for="budgetFilter">Filter by Budget:</label>
@@ -87,37 +82,44 @@
 		</div>
 		<!-- /// -->
 		<h3 class="text-start px-1 py-3">List of Expenses</h3>
-		<div class="card">
-			<p class="card-text p-5" v-if="filteredExpenses.length === 0">
-				Your expenses will appear here.
-			</p>
-			<div class="card-body py-3" v-for="(expense, index) in filteredExpenses" :key="index">
-				<div class="row d-flex justify-content-center">
-					<div :class="['col', showEditColumn || showDeleteColumn ? '' : 'col']">
+		<div class="container">
+			<div class="scrollable-row">
+			  <div class="card p-0" v-for="(expense, index) in filteredExpenses" :key="index">
+				<p class="card-text p-5" v-if="filteredExpenses.length === 0">
+				  Your expenses will appear here.
+				</p>
+				<div class="card-body py-3">
+				  <div class="row d-flex justify-content-center">
+					<div class="row d-flex">
 						<button class="btn btn-success rounded-5" @click="editExpense(index)" v-if="showEditColumn">
-							<i class="bi bi-pencil-square"></i>
+						  <i class="bi bi-pencil-square"></i>
 						</button>
-					</div>
-					<div :class="['col-5 py-0 px-0', showEditColumn || showDeleteColumn ? 'col' : 'col']">
-						<p class="expense-name m-0">
-							{{ expense.name }}
-						</p>
-						<ul class="p-0">
-							<li class="payment-method">Method: {{ expense.selectedPaymentMethod }}</li>
-							<li class="time-text">on {{ formatDate(expense.dateTime) }}</li>
-						</ul>
-					</div>
-					<div :class="['col', showEditColumn || showDeleteColumn ? 'col' : 'col-3']">
-						<p class="card-text">R{{ expense.amount }}</p>
-					</div>
-					<div :class="['col', showEditColumn || showDeleteColumn ? 'col' : 'col']">
 						<button class="btn btn-danger rounded-5" @click="deleteExpense(index)" v-if="showDeleteColumn">
-							<i class="bi bi-dash-circle"></i>
+						  <i class="bi bi-dash-circle"></i>
 						</button>
 					</div>
+					<div>
+						<div class="d-flex align-items-center justify-content-between">
+							<i :class="['bi expense-icon', categoryIcons[expense.category]]"></i>
+							{{ formatDate(expense.dateTime) }}
+						</div>
+						<div>
+
+							<p class="expense-name m-0">
+							  {{ expense.name }}
+							</p>
+							<p class="payment-method m-0">
+							  {{ expense.selectedPaymentMethod }}
+							</p>
+						  </div>
+							<p class="price-text">R{{ expense.amount }}</p>
+						</div>
+				  </div>
 				</div>
+			  </div>
 			</div>
-		</div>
+		  </div>
+		  
 		<AddBudget @budgetAdded="addBudget" />
 		<AddExpense ref="addExpense" @expenseAdded="addExpense" :selectedBudget="selectedBudget" :budgets="budgets" />
 		<EditExpense :expense="expenses[editingIndex]" :show="editingIndex >= 0" ref="editExpense"
@@ -150,6 +152,14 @@ export default {
 			editingIndex: -1,
 			showEditColumn: false,
 			showDeleteColumn: false,
+			categoryIcons: {
+				personal: 'bi-person-fill',
+				food: 'bi-cup-straw',
+				family: 'bi-people-fill',
+				entertainment: 'bi-controller',
+				traveling: 'bi-car-front',
+				other: 'bi-star-fill',
+			},
 		};
 	},
 	computed: {

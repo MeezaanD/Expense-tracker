@@ -1,5 +1,5 @@
 <template>
-	<router-view class="p-2" />
+	<router-view class="p-0" />
 	<Navbar class="navbar sticky-bottom" />
 </template>
 

@@ -1,9 +1,9 @@
 <template>
-	<div class="container">
+	<div class="container bg-light my-3">
 		<div class="form-floating mx-2 mb-3">
 			<input type="text" class="form-control transparent-input" id="expenseNameFilter" v-model="searchTerm"
 				placeholder="">
-			<label class="transparent-label" for="expenseNameFilter">Search by Expense Name</label>
+			<label class="text-black" for="expenseNameFilter">Search by Expense Name</label>
 		</div>
 		<!-- /// -->
 		<div class="my-2">
@@ -158,5 +158,6 @@ export default {
 .transparent-label {
 	background-color: transparent;
 }
+
 </style>
   
