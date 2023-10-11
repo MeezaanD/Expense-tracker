@@ -33,17 +33,15 @@
 					</button>
 				</div>
 			</div>
-
-			<div>
-				<div class="form-floating my-2 transparent-select">
-					<label for="budgetSelect" v-if="!selectedBudget">Select Budget</label>
-					<select class="form-select text-white" v-model="selectedBudget">
-						<option class="text-black" v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{
-							budget.name }}</option>
-					</select>
-				</div>
-
-				<div class="my-2">
+			<div class="form-floating my-3 mx-3 transparent-select">
+				<label for="budgetSelect" v-if="!selectedBudget">Select Budget</label>
+				<select class="form-select text-light" v-model="selectedBudget">
+					<option class="text-black" v-for="(budget, index) in budgets" :key="index" :value="budget.name">{{
+						budget.name }}</option>
+				</select>
+			</div>
+			<div class="bg-light p-3 rounded-5 my-3">
+				<div class="my-3">
 					<table class="table">
 						<thead>
 							<tr>
@@ -71,14 +69,14 @@
 			</div>
 		</div>
 		<div>
-			<div v-if="selectedBudget">
-				<div class="d-flex justify-content-between pe-1 my-2">
-					<h2>Expenses for {{ selectedBudget }}</h2>
+			<div class="bg-light rounded-5 p-3" v-if="selectedBudget">
+				<div class="d-flex justify-content-between px-2 my-2">
+					<h2 class="text-black">Expenses for {{ selectedBudget }}</h2>
 					<button class="btn btn-primary rounded-pill" @click="openAddExpenseModal">
 						<i class="bi bi-plus-circle fs-5"></i>
 					</button>
 				</div>
-				<div>
+				<div class="bg-light p-0 rounded-5">
 					<table class="table">
 						<thead>
 							<tr>

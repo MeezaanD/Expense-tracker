@@ -27,11 +27,12 @@ li {
 }
 
 .nav-container {
-	background: beige;
+	background: transparent !important;
 }
 
 .nav {
 	display: flex;
+	background: beige;
 	-webkit-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
 	-moz-box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
 	box-shadow: 0px 0px 30px 15px rgba(90, 90, 90, 0.35);
@@ -70,6 +71,7 @@ li {
 
 .transparent-select select {
 	background-color: transparent;
+	/* box-shadow: 0px 0px 30px 15px rgba(150, 150, 150, 0.35); */
 }
 
 
@@ -175,10 +177,10 @@ label {
 .price-text {
 	font-weight: 900;
 	letter-spacing: 1px;
-	font-size: x-large;
+	font-size: large;
 }
 
 .expense-icon {
-	font-size: 50px;
-	padding: 0;
+	font-size: 80px;
+	/* padding: 0; */
 }

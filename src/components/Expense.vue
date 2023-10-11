@@ -81,45 +81,45 @@
 			</div>
 		</div>
 		<!-- /// -->
-		<h3 class="text-start px-1 py-3">List of Expenses</h3>
+		<h3 class="text-start px-3 py-3">List of Expenses</h3>
 		<div class="container">
 			<div class="scrollable-row">
-			  <div class="card p-0" v-for="(expense, index) in filteredExpenses" :key="index">
-				<p class="card-text p-5" v-if="filteredExpenses.length === 0">
-				  Your expenses will appear here.
-				</p>
-				<div class="card-body py-3">
-				  <div class="row d-flex justify-content-center">
-					<div class="row d-flex">
-						<button class="btn btn-success rounded-5" @click="editExpense(index)" v-if="showEditColumn">
-						  <i class="bi bi-pencil-square"></i>
-						</button>
-						<button class="btn btn-danger rounded-5" @click="deleteExpense(index)" v-if="showDeleteColumn">
-						  <i class="bi bi-dash-circle"></i>
-						</button>
+				<div class="card p-0" v-for="(expense, index) in filteredExpenses" :key="index">
+					<p class="card-text p-5" v-if="filteredExpenses.length === 0">
+						Your expenses will appear here.
+					</p>
+					<div class="card-body py-3">
+						<div class="row d-flex justify-content-between">
+							<div class="d-flex justify-content-start">
+								<button class="btn p-0 m-0 rounded-5" @click="editExpense(index)" v-if="showEditColumn">
+									<i class="bi bi-pencil-square fs-3 text-light"></i>
+								</button>
+							</div>
+								<div class="d-flex align-items-center gap-3 justify-content-between">
+									<i :class="['bi expense-icon', categoryIcons[expense.category]]"></i>
+									<div>
+										<p class="time-text">{{ formatDate(expense.dateTime) }}</p>
+										<p class="expense-name m-0">
+											{{ expense.name }}
+										</p>
+										<p class="payment-method m-0">
+											{{ expense.selectedPaymentMethod }}
+										</p>
+										<div class="d-flex gap-3 align-items-center justify-content-start">
+											<button class="btn p-0 m-0 rounded-5" @click="deleteExpense(index)"
+												v-if="showDeleteColumn">
+												<i class="bi bi-dash-circle fs-3 text-light"></i>
+											</button>
+											<p class="price-text pt-3">R{{ expense.amount }}</p>
+										</div>
+									</div>
+								</div>
+						</div>
 					</div>
-					<div>
-						<div class="d-flex align-items-center justify-content-between">
-							<i :class="['bi expense-icon', categoryIcons[expense.category]]"></i>
-							{{ formatDate(expense.dateTime) }}
-						</div>
-						<div>
-
-							<p class="expense-name m-0">
-							  {{ expense.name }}
-							</p>
-							<p class="payment-method m-0">
-							  {{ expense.selectedPaymentMethod }}
-							</p>
-						  </div>
-							<p class="price-text">R{{ expense.amount }}</p>
-						</div>
-				  </div>
 				</div>
-			  </div>
 			</div>
-		  </div>
-		  
+		</div>
+
 		<AddBudget @budgetAdded="addBudget" />
 		<AddExpense ref="addExpense" @expenseAdded="addExpense" :selectedBudget="selectedBudget" :budgets="budgets" />
 		<EditExpense :expense="expenses[editingIndex]" :show="editingIndex >= 0" ref="editExpense"
